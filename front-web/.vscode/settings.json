@@ -2,5 +2,9 @@
     "typescript.tsdk": "/usr/local/lib/node_modules/typescript/lib",
     "editor.fontFamily": "Fira Code",
     "editor.fontLigatures": true,
-    "editor.fontWeight": "500"
+    "editor.fontWeight": "500",
+    "editor.codeActionsOnSave": {
+        "source.fixAll": true
+    },
+    "explorer.compactFolders": false
 }
