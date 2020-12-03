@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 const Home = () => (
     <div className="home-container">
-        <div className="home-content row">
+        <div className="home-content row card-base border-radius-20">
             <div className="col-6 home-text">
                 <h1 className="text-title">Conheça o melhor catálogo de produtos</h1>
                 <p className="text-subtitle">

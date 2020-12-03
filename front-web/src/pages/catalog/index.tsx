@@ -1,8 +1,11 @@
 import React from 'react';
-
+import './styles.scss'
 const Catalog = () => (
-    <div>
-        <h1>Catalog</h1>
+    <div className="catalog-container">
+        <h1 className="catalog-title">Catálogo de produtos</h1>
+        <div className="catalog-products">
+            <h1>product1</h1>
+        </div>
     </div>
 );
 
