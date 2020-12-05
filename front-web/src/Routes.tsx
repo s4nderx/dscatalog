@@ -2,8 +2,8 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import NavBar from './core/components/NavBar';
 import Admin from './pages/Admin';
-import Catalog from './pages/Catalog';
-import Home from './pages/Home';
+import Catalog from './pages/catalog';
+import Home from './pages/home';
 
 
 const Routes = () => (
