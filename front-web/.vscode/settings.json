@@ -1,5 +1,5 @@
 {
-    "typescript.tsdk": "/usr/local/lib/node_modules/typescript/lib",
+    "typescript.tsdk": "node_modules\\typescript\\lib",
     "editor.fontFamily": "Fira Code",
     "editor.fontLigatures": true,
     "editor.fontWeight": "500",

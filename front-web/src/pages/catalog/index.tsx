@@ -2,16 +2,26 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import ProductCard from './components/ProductCard';
 import './styles.scss';
+import { http_client } from '../../core/utils/request';
 const Catalog = () => {
     //qunado o componente iniciar, buscar a lista de produtos
+    useEffect(() => {
+
+        //limitacoes do fetch:
+        // > muito verboso
+        // > não tem suporte nativo para receber o progresso de upload de arquivos
+        // > não tem suporte nativo para trabalhar query strings
+
+        const params = {
+            page: 0,
+            linesPerPage: 12
+        };
+        http_client({ url: '/products', params }).then((response) =>
+            console.log(response)
+        );
+    }, []);
 
     //quando a lisra de produtos estiver disponivel, popilar um estado no componente e listar os produtos dinamicamente
-
-    useEffect(() => {
-        fetch('http://localhost:3000/products')
-            .then((response) => response.json())
-            .then((response) => console.log(response));
-    }, []);
 
     return (
         <div className="catalog-container">
