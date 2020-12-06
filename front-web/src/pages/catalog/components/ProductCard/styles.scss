@@ -1,5 +1,4 @@
 .product-card {
-
     width: 245px;
     height: 335px;
     padding: 18px 20px 30px 20px;
@@ -7,10 +6,8 @@
 }
 
 .product-info {
-
-    border-top: 1px solid #E1E1E1;
+    border-top: 1px solid #e1e1e1;
     margin-top: 15px;
-
 }
 
 .product-name {
@@ -20,4 +17,11 @@
     text-align: left;
     padding-top: 15px;
     color: #263238;
+}
+
+.product-card-image {
+    width: 158px;
+    height: 158px;
+    left: 197px;
+    top: 18px;
 }
