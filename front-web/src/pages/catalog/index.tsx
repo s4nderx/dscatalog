@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import ProductCard from './components/ProductCard';
 import './styles.scss';
-import { http_request } from '../../core/utils/request';
-import { ProductsResponse } from '../../core/types/Product';
-import ProductCardLoader from './components/ProductCardLoarder/index ';
+import { http_request } from 'core/utils/request';
+import { ProductsResponse } from 'core/types/Product';
+import ProductCardLoader from './components/Loaders/ProductCardLoader';
+
 const Catalog = () => {
     const [
         productsResponse,
@@ -18,12 +19,10 @@ const Catalog = () => {
             page: 0,
             linesPerPage: 24
         };
-        //iniciar o loader
         setIsLoading(true);
         http_request({ url: '/products', params })
             .then((response) => setProductsResponse(response.data))
             .finally(() => {
-                //finalizar o loader
                 setIsLoading(false);
             });
     }, []);

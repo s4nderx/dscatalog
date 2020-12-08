@@ -1,12 +1,15 @@
 import React from 'react';
 import ContentLoader from 'react-content-loader';
+import { generateList } from 'core/utils/list';
+import './styles.scss';
 
 const ProductCardLoader = () => {
-    const loadrItems = [0, 1, 2];
+    const loaderItems = generateList(12);
     return (
         <>
-            {loadrItems.map((item) => (
+            {loaderItems.map((item) => (
                 <ContentLoader
+                    className="product-card-loader"
                     key={item}
                     speed={2}
                     width={250}
