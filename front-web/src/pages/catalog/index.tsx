@@ -4,33 +4,43 @@ import ProductCard from './components/ProductCard';
 import './styles.scss';
 import { http_request } from '../../core/utils/request';
 import { ProductsResponse } from '../../core/types/Product';
+import ProductCardLoader from './components/ProductCardLoarder/index ';
 const Catalog = () => {
     const [
         productsResponse,
         setProductsResponse
     ] = useState<ProductsResponse>();
-    console.log(productsResponse);
+
+    const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
         const params = {
             page: 0,
             linesPerPage: 24
         };
-
-        http_request({ url: '/products', params }).then((response) =>
-            setProductsResponse(response.data)
-        );
+        //iniciar o loader
+        setIsLoading(true);
+        http_request({ url: '/products', params })
+            .then((response) => setProductsResponse(response.data))
+            .finally(() => {
+                //finalizar o loader
+                setIsLoading(false);
+            });
     }, []);
 
     return (
         <div className="catalog-container">
             <h1 className="catalog-title">Catálogo de produtos</h1>
             <div className="catalog-products">
-                {productsResponse?.content.map((product) => (
-                    <Link to="/products/1" key={product.id}>
-                        <ProductCard product={product} />
-                    </Link>
-                ))}
+                {isLoading ? (
+                    <ProductCardLoader />
+                ) : (
+                    productsResponse?.content.map((product) => (
+                        <Link to={`/products/${product.id}`} key={product.id}>
+                            <ProductCard product={product} />
+                        </Link>
+                    ))
+                )}
             </div>
         </div>
     );
