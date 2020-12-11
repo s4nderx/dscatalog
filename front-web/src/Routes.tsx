@@ -8,7 +8,7 @@ import Home from './pages/home';
 
 const Routes = () => (
     <BrowserRouter>
-        <NavBar></NavBar>
+        <NavBar />
         <Switch>
             <Route path="/" exact>
                 <Home></Home>
