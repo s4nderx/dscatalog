@@ -1,57 +1,70 @@
 import BaseForm from 'pages/Admin/components/BaseForm';
 import { useState } from 'react';
 
+type FormState = {
+    name: string;
+    price: string;
+    category: string;
+}
+
 const Form = () => {
 
-    const [name, setName] = useState('');
-    const [price, setPrice] = useState('');
-    const [category, setCategory] = useState('');
+    const [formData, setFormData] = useState<FormState>({
+        name: '',
+        price: '',
+        category: ''
+    });
 
-    const handleOnChangeName = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setName(event.target.value);
+    const handleOnChange = (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+        const name = event.target.name;
+        const value = event.target.value;
+        console.log({name, value});
+        
+        setFormData(data => ({ ...data, [name]: value}));
     };
 
-    const handleOnChangePrice = (
-        event: React.ChangeEvent<HTMLInputElement>
-    ) => {
-        setPrice(event.target.value);
-    };
-
-    const handleOnChangeCategory = (
-        event: React.ChangeEvent<HTMLSelectElement>
-    ) => {
-        setCategory(event.target.value);
-    };
+    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        console.log(formData);
+        
+    }
 
     return (
-        <BaseForm title="CADASTRAR UM PRODUTO">
-            <div className="row">
-                <div className="col-6">
-                    <input
-                        value={name}
-                        type="text"
-                        className="form-control mb-5"
-                        onChange={handleOnChangeName}
-                    />
+        <form onSubmit={handleSubmit}>
+                <BaseForm title="CADASTRAR UM PRODUTO">
+                    <div className="row">
+                        <div className="col-6">
+                            <input
+                                value={formData.name}
+                                name="name"
+                                type="text"
+                                className="form-control mb-5"
+                                onChange={handleOnChange}
+                                placeholder="Nome do Produto"
+                            />
 
-                    <select
-                        className="form-control mb-5"
-                        onChange={handleOnChangeCategory}
-                    >
-                        <option value="livros">Livros</option>
-                        <option value="computadores">Computadores</option>
-                        <option value="eletronicos">Eletrônicos</option>
-                    </select>
+                            <select
+                                value={formData.category}
+                                className="form-control mb-5"
+                                onChange={handleOnChange}
+                                name="category"
+                            >
+                                <option value="livros">Livros</option>
+                                <option value="computadores">Computadores</option>
+                                <option value="eletronicos">Eletrônicos</option>
+                            </select>
 
-                    <input
-                        value={price}
-                        type="text"
-                        className="form-control"
-                        onChange={handleOnChangePrice}
-                    />
-                </div>
-            </div>
-        </BaseForm>
+                            <input
+                                value={formData.price}
+                                name="price"
+                                type="text"
+                                className="form-control"
+                                onChange={handleOnChange}
+                            />
+                        </div>
+                    </div>
+                </BaseForm>         
+        </form>
     );
 };
 
