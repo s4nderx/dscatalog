@@ -6,5 +6,7 @@
     "editor.codeActionsOnSave": {
         "source.fixAll": true
     },
-    "explorer.compactFolders": false
+    "explorer.compactFolders": false,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
 }

@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import ProductCard from './components/ProductCard';
 import './styles.scss';
 import { http_request } from 'core/utils/request';
 import { ProductsResponse } from 'core/types/Product';
-import ProductCardLoader from './components/Loaders/ProductCardLoader';
 import Pagination from 'core/components/Pagination';
+import ProductCardLoader from './components/Loaders/ProductCardLoader';
+import ProductCard from './components/ProductCard';
 
 const Catalog = () => {
     const [
@@ -45,7 +45,7 @@ const Catalog = () => {
             </div>
             {productsResponse && (
                 <Pagination
-                    totalPages={productsResponse.totalPages}
+                    totalPages={100}
                     activePage={activePage}
                     onChange={(page) => setActivePage(page)}
                 />

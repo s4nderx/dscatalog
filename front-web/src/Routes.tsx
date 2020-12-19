@@ -1,10 +1,11 @@
+import ProductDetails from 'pages/Catalog/components/ProductDetails';
 import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import NavBar from './core/components/NavBar';
 import Admin from './pages/Admin';
-import Catalog from './pages/catalog';
-import ProductDetails from './pages/catalog/components/ProductDetails';
-import Home from './pages/home';
+import Catalog from './pages/Catalog';
+
+import Home from './pages/Home';
 
 const Routes = () => (
     <BrowserRouter>
@@ -20,6 +21,7 @@ const Routes = () => (
                 <ProductDetails></ProductDetails>
             </Route>
             <Route path="/admin">
+                <Redirect to="/admin/products"></Redirect>
                 <Admin></Admin>
             </Route>
         </Switch>
