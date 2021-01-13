@@ -1,5 +1,7 @@
 package com.devsuperior.dscatalog.resources.exceptions;
 
+import com.amazonaws.AmazonClientException;
+import com.amazonaws.AmazonServiceException;
 import com.devsuperior.dscatalog.services.exceptions.DataBaseException;
 import com.devsuperior.dscatalog.services.exceptions.ResourceNotFoundException;
 import org.springframework.http.HttpStatus;
@@ -50,6 +52,39 @@ public class ResourceExceptionHandler {
             error.addError(f.getField(), f.getDefaultMessage());
         }
 
+        return ResponseEntity.status(error.getStatus()).body(error);
+    }
+
+    @ExceptionHandler(AmazonServiceException.class)
+    public ResponseEntity<StandardError> amazonService(AmazonServiceException exception, HttpServletRequest request){
+        StandardError error = new StandardError();
+        error.setTimestamp(Instant.now());
+        error.setStatus(HttpStatus.BAD_REQUEST.value());
+        error.setError("AWS Service Exception.");
+        error.setMessage(exception.getMessage());
+        error.setPath(request.getRequestURI());
+        return ResponseEntity.status(error.getStatus()).body(error);
+    }
+
+    @ExceptionHandler(AmazonClientException.class)
+    public ResponseEntity<StandardError> amazonClient(AmazonClientException exception, HttpServletRequest request){
+        StandardError error = new StandardError();
+        error.setTimestamp(Instant.now());
+        error.setStatus(HttpStatus.BAD_REQUEST.value());
+        error.setError("AWS Client Exception.");
+        error.setMessage(exception.getMessage());
+        error.setPath(request.getRequestURI());
+        return ResponseEntity.status(error.getStatus()).body(error);
+    }
+
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity<StandardError> illegalArgument(IllegalArgumentException exception, HttpServletRequest request){
+        StandardError error = new StandardError();
+        error.setTimestamp(Instant.now());
+        error.setStatus(HttpStatus.BAD_REQUEST.value());
+        error.setError("Bad request.");
+        error.setMessage(exception.getMessage());
+        error.setPath(request.getRequestURI());
         return ResponseEntity.status(error.getStatus()).body(error);
     }
 
