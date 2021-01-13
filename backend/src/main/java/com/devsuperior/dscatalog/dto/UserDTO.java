@@ -1,17 +1,11 @@
 package com.devsuperior.dscatalog.dto;
 
-import com.devsuperior.dscatalog.entities.Category;
-import com.devsuperior.dscatalog.entities.Product;
 import com.devsuperior.dscatalog.entities.User;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotEmpty;
 import java.io.Serializable;
-import java.time.Instant;
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 public class UserDTO implements Serializable {

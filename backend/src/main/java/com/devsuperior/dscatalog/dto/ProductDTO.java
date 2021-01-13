@@ -2,9 +2,7 @@ package com.devsuperior.dscatalog.dto;
 
 import com.devsuperior.dscatalog.entities.Category;
 import com.devsuperior.dscatalog.entities.Product;
-import com.sun.source.doctree.SerialDataTree;
 
-import javax.persistence.Column;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.PastOrPresent;
 import javax.validation.constraints.Positive;
