@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0e23b32c-b61e-45f4-a7e0-cfbafb54ef6a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/front-web/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/front-web/.eslintcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-web/src/core/assets/styles/custom.scss" beforeDir="false" afterPath="$PROJECT_DIR$/front-web/src/core/assets/styles/custom.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-web/src/pages/catalog/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-web/src/pages/catalog/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-web/src/pages/catalog/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/front-web/src/pages/catalog/styles.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/devsuperior/dscatalog/dto/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/devsuperior/dscatalog/dto/UserDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +20,11 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/backend" />
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="0e23b32c-b61e-45f4-a7e0-cfbafb54ef6a" name="Default Changelist" comment="" />
@@ -30,7 +32,17 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1607580736210</updated>
+      <workItem from="1611163496557" duration="90000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1611163591753">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/-1366.0.1366.728/0.0.1920.1040@0.0.1920.1040" timestamp="1611163591753" />
   </component>
 </project>
