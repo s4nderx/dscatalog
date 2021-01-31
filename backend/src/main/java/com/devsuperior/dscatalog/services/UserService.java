@@ -8,7 +8,7 @@ import com.devsuperior.dscatalog.entities.Role;
 import com.devsuperior.dscatalog.entities.User;
 import com.devsuperior.dscatalog.repositories.RoleRepository;
 import com.devsuperior.dscatalog.repositories.UserRepository;
-import com.devsuperior.dscatalog.services.exceptions.DataBaseException;
+import com.devsuperior.dscatalog.services.exceptions.DatabaseException;
 import com.devsuperior.dscatalog.services.exceptions.ResourceNotFoundException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -81,7 +81,7 @@ public class UserService implements UserDetailsService {
         } catch (EmptyResultDataAccessException e){
             throw new ResourceNotFoundException("Id not found " + id);
         } catch (DataIntegrityViolationException e){
-            throw new DataBaseException("Integrity violation");
+            throw new DatabaseException("Integrity violation");
         }
 
     }

@@ -3,7 +3,7 @@ package com.devsuperior.dscatalog.tests.services;
 import com.devsuperior.dscatalog.entities.Product;
 import com.devsuperior.dscatalog.repositories.ProductRepository;
 import com.devsuperior.dscatalog.services.ProductService;
-import com.devsuperior.dscatalog.services.exceptions.DataBaseException;
+import com.devsuperior.dscatalog.services.exceptions.DatabaseException;
 import com.devsuperior.dscatalog.services.exceptions.ResourceNotFoundException;
 import com.devsuperior.dscatalog.tests.factory.ProductFactory;
 import org.junit.jupiter.api.Assertions;
@@ -59,9 +59,9 @@ public class ProductServiceTests {
     }
 
     @Test
-    public void deleteShouldThrowDataBaseExceptionWhenIdDoesNotExists() {
+    public void deleteShouldThrowDataBaseExceptionWhenDependentId() {
 
-        Assertions.assertThrows(DataBaseException.class, () -> service.delete(dependentId));
+        Assertions.assertThrows(DatabaseException.class, () -> service.delete(dependentId));
 
         Mockito.verify(repository, Mockito.times(1)).deleteById(dependentId);
 

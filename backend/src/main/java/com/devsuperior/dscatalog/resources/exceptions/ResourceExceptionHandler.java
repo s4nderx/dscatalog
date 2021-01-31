@@ -2,7 +2,7 @@ package com.devsuperior.dscatalog.resources.exceptions;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
-import com.devsuperior.dscatalog.services.exceptions.DataBaseException;
+import com.devsuperior.dscatalog.services.exceptions.DatabaseException;
 import com.devsuperior.dscatalog.services.exceptions.ResourceNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -28,8 +28,8 @@ public class ResourceExceptionHandler {
         return ResponseEntity.status(error.getStatus()).body(error);
     }
 
-    @ExceptionHandler(DataBaseException.class)
-    public ResponseEntity<StandardError> dataBase(DataBaseException exception, HttpServletRequest request){
+    @ExceptionHandler(DatabaseException.class)
+    public ResponseEntity<StandardError> dataBase(DatabaseException exception, HttpServletRequest request){
         StandardError error = new StandardError();
         error.setTimestamp(Instant.now());
         error.setStatus(HttpStatus.BAD_REQUEST.value());
