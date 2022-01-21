@@ -1,0 +1,16 @@
+version: '3.3'
+services:
+  dscatalog:
+    ports:
+      - '80:8080'
+    build: './'
+    container_name: dscatalog-hrk
+    environment:
+      - APP_PROFILE=dev
+      - AWS_KEY=
+      - AWS_SECRET=
+      - DSCATALOG_BUCKET_NAME=bds-sander
+      - DSCATALOG_BUCKET_REGION=sa-east-1
+      - DATABASE_URL=jdbc:postgresql://databaseuri:port/database
+      - DATABASE_USERNAME=user
+      - DATABASE_PASSWORD=12345678
